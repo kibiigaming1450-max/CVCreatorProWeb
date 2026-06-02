@@ -1,1 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CV Creator Pro</title>
+
+<link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🚀 CV Creator Pro</h1>
+
+<p>Crée ton CV professionnel</p>
+
+<form action="/generer" method="POST">
+
+<input
+type="text"
+name="nom"
+placeholder="Nom"
+required>
+
+<input
+type="text"
+name="prenom"
+placeholder="Prénom"
+required>
+
+<input
+type="email"
+name="email"
+placeholder="Email">
+
+<input
+type="text"
+name="telephone"
+placeholder="Téléphone">
+
+<input
+type="text"
+name="adresse"
+placeholder="Adresse">
+
+<textarea
+name="profil"
+placeholder="Profil">
+</textarea>
+
+<textarea
+name="competences"
+placeholder="Compétences">
+</textarea>
+
+<textarea
+name="experience"
+placeholder="Expérience">
+</textarea>
+
+<textarea
+name="formation"
+placeholder="Formation">
+</textarea>
+
+<textarea
+name="langues"
+placeholder="Langues">
+</textarea>
+
+<textarea
+name="interets"
+placeholder="Centres d'intérêt">
+</textarea>
+
+<button type="submit">
+Créer mon CV
+</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
