@@ -14,7 +14,7 @@ render_template("index.html")
 @app.route("/generer", methods=["POST"])
 def generer():
 
-global cv_data
+       global cv_data
 
 cv_data = {
     "nom": request.form.get("nom"),
