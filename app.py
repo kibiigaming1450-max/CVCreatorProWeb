@@ -38,7 +38,7 @@ return render_template(
 @app.route("/pdf")
 def pdf():
 
-pdf_path = "cv.pdf"
+       pdf_path = "cv.pdf"
 
 doc = SimpleDocTemplate(pdf_path)
 
