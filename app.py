@@ -8,7 +8,8 @@ cv_data = {}
 
 @app.route("/")
 def accueil():
-return render_template("index.html")
+       return 
+render_template("index.html")
 
 @app.route("/generer", methods=["POST"])
 def generer():
