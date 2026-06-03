@@ -1,0 +1,67 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Votre CV</title>
+
+<link rel="stylesheet" href="/static/style.css">
+
+</head><body><div class="container">
+
+    <h1>
+        {{ prenom }} {{ nom }}
+    </h1>
+
+    <p>
+        <b>📧 Email :</b>
+        {{ email }}
+    </p>
+
+    <p>
+        <b>📞 Téléphone :</b>
+        {{ telephone }}
+    </p>
+
+    <p>
+        <b>🏠 Adresse :</b>
+        {{ adresse }}
+    </p>
+
+    <hr>
+
+    <h2>👤 Profil</h2>
+    <p>{{ profil }}</p>
+
+    <h2>💪 Compétences</h2>
+    <p>{{ competences }}</p>
+
+    <h2>💼 Expérience</h2>
+    <p>{{ experience }}</p>
+
+    <h2>🎓 Formation</h2>
+    <p>{{ formation }}</p>
+
+    <h2>🌍 Langues</h2>
+    <p>{{ langues }}</p>
+
+    <h2>⭐ Centres d'intérêt</h2>
+    <p>{{ interets }}</p>
+
+    <br>
+
+    <a href="/pdf">
+        <button>
+            📄 Télécharger le PDF
+        </button>
+    </a>
+
+    <br><br>
+
+    <a href="/">
+        <button>
+            🔙 Retour
+        </button>
+    </a>
+
+</div>
+
+</body></html>''
