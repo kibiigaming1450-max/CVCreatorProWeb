@@ -1,91 +1,77 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-
-<meta charset="UTF-8">
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>CV Creator Pro</title>
 
 <link rel="stylesheet" href="/static/style.css">
 
-</head>
+</head><body><div class="container">
 
-<body>
+    <h1>🚀 CV Creator Pro</h1>
 
-<div class="container">
+    <p class="subtitle">
+        Crée un CV professionnel en quelques minutes
+    </p>
 
-<h1>🚀 CV Creator Pro</h1>
+    <form action="/generer" method="POST">
 
-<p>Crée ton CV professionnel</p>
+        <input
+            type="text"
+            name="nom"
+            placeholder="Nom"
+            required>
 
-<form action="/generer" method="POST">
+        <input
+            type="text"
+            name="prenom"
+            placeholder="Prénom"
+            required>
 
-<input
-type="text"
-name="nom"
-placeholder="Nom"
-required>
+        <input
+            type="email"
+            name="email"
+            placeholder="Email">
 
-<input
-type="text"
-name="prenom"
-placeholder="Prénom"
-required>
+        <input
+            type="text"
+            name="telephone"
+            placeholder="Téléphone">
 
-<input
-type="email"
-name="email"
-placeholder="Email">
+        <input
+            type="text"
+            name="adresse"
+            placeholder="Adresse">
 
-<input
-type="text"
-name="telephone"
-placeholder="Téléphone">
+        <textarea
+            name="profil"
+            placeholder="Parlez de vous..."></textarea>
 
-<input
-type="text"
-name="adresse"
-placeholder="Adresse">
+        <textarea
+            name="competences"
+            placeholder="Compétences"></textarea>
 
-<textarea
-name="profil"
-placeholder="Profil">
-</textarea>
+        <textarea
+            name="experience"
+            placeholder="Expériences professionnelles"></textarea>
 
-<textarea
-name="competences"
-placeholder="Compétences">
-</textarea>
+        <textarea
+            name="formation"
+            placeholder="Formation"></textarea>
 
-<textarea
-name="experience"
-placeholder="Expérience">
-</textarea>
+        <textarea
+            name="langues"
+            placeholder="Langues"></textarea>
 
-<textarea
-name="formation"
-placeholder="Formation">
-</textarea>
+        <textarea
+            name="interets"
+            placeholder="Centres d'intérêt"></textarea>
 
-<textarea
-name="langues"
-placeholder="Langues">
-</textarea>
+        <button type="submit">
+            📄 Créer mon CV
+        </button>
 
-<textarea
-name="interets"
-placeholder="Centres d'intérêt">
-</textarea>
-
-<button type="submit">
-Créer mon CV
-</button>
-
-</form>
+    </form>
 
 </div>
 
-</body>
-</html>
+</body></html>
