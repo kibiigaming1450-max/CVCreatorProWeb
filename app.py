@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, send_file
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
 from reportlab.lib.styles import getSampleStyleSheet
 
-app = Flask(name)
+app = Flask(__name__) 
 
 cv_data = {}
 
@@ -194,7 +194,7 @@ return send_file(
     download_name="MonCV.pdf"
 )
 
-if name == "main":
+if __name__ == "__main__":
 app.run(
 host="0.0.0.0",
 port=5000,
