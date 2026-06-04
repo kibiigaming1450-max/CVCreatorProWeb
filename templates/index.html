@@ -1,77 +1,182 @@
-<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Creator Pro</title>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
 
-<title>CV Creator Pro</title>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial,sans-serif;
+        }
 
-<link rel="stylesheet" href="/static/style.css">
+        body{
+            background:linear-gradient(135deg,#4f46e5,#7c3aed);
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            padding:20px;
+        }
 
-</head><body><div class="container">
+        .container{
+            background:white;
+            width:100%;
+            max-width:850px;
+            border-radius:25px;
+            padding:35px;
+            box-shadow:0 10px 30px rgba(0,0,0,0.2);
+        }
 
-    <h1>🚀 CV Creator Pro</h1>
+        h1{
+            text-align:center;
+            margin-bottom:25px;
+            color:#4f46e5;
+        }
 
-    <p class="subtitle">
-        Crée un CV professionnel en quelques minutes
+        .form-group{
+            margin-bottom:15px;
+        }
+
+        label{
+            display:block;
+            margin-bottom:5px;
+            font-weight:bold;
+        }
+
+        input,
+        textarea,
+        select{
+            width:100%;
+            padding:12px;
+            border:2px solid #ddd;
+            border-radius:10px;
+            font-size:15px;
+        }
+
+        textarea{
+            resize:vertical;
+            min-height:100px;
+        }
+
+        button{
+            width:100%;
+            padding:15px;
+            border:none;
+            border-radius:12px;
+            background:#4f46e5;
+            color:white;
+            font-size:18px;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        button:hover{
+            background:#3730a3;
+        }
+
+        .title{
+            text-align:center;
+            color:#666;
+            margin-bottom:25px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <h1>📄 CV Creator Pro</h1>
+
+    <p class="title">
+        Crée un CV professionnel en quelques secondes
     </p>
 
-    <form action="/generer" method="POST">
+    <form action="/generer" method="POST" enctype="multipart/form-data">
 
-        <input
-            type="text"
-            name="nom"
-            placeholder="Nom"
-            required>
+        <div class="form-group">
+            <label>Nom</label>
+            <input type="text" name="nom" required>
+        </div>
 
-        <input
-            type="text"
-            name="prenom"
-            placeholder="Prénom"
-            required>
+        <div class="form-group">
+            <label>Prénom</label>
+            <input type="text" name="prenom" required>
+        </div>
 
-        <input
-            type="email"
-            name="email"
-            placeholder="Email">
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email" required>
+        </div>
 
-        <input
-            type="text"
-            name="telephone"
-            placeholder="Téléphone">
+        <div class="form-group">
+            <label>Téléphone</label>
+            <input type="text" name="telephone">
+        </div>
 
-        <input
-            type="text"
-            name="adresse"
-            placeholder="Adresse">
+        <div class="form-group">
+            <label>Adresse</label>
+            <input type="text" name="adresse">
+        </div>
 
-        <textarea
-            name="profil"
-            placeholder="Parlez de vous..."></textarea>
+        <div class="form-group">
+            <label>Profil</label>
+            <textarea name="profil"></textarea>
+        </div>
 
-        <textarea
-            name="competences"
-            placeholder="Compétences"></textarea>
+        <div class="form-group">
+            <label>Compétences</label>
+            <textarea name="competences"></textarea>
+        </div>
 
-        <textarea
-            name="experience"
-            placeholder="Expériences professionnelles"></textarea>
+        <div class="form-group">
+            <label>Expérience</label>
+            <textarea name="experience"></textarea>
+        </div>
 
-        <textarea
-            name="formation"
-            placeholder="Formation"></textarea>
+        <div class="form-group">
+            <label>Formation</label>
+            <textarea name="formation"></textarea>
+        </div>
 
-        <textarea
-            name="langues"
-            placeholder="Langues"></textarea>
+        <div class="form-group">
+            <label>Langues</label>
+            <textarea name="langues"></textarea>
+        </div>
 
-        <textarea
-            name="interets"
-            placeholder="Centres d'intérêt"></textarea>
+        <div class="form-group">
+            <label>Centres d'intérêt</label>
+            <textarea name="interets"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>🎨 Thème</label>
+            <select name="theme">
+                <option value="bleu">Bleu Pro</option>
+                <option value="vert">Vert Moderne</option>
+                <option value="sombre">Dark Mode</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>📷 Photo de profil</label>
+            <input type="file" name="photo">
+        </div>
 
         <button type="submit">
-            📄 Créer mon CV
+            🚀 Générer mon CV
         </button>
 
     </form>
 
 </div>
 
-</body></html>
+</body>
+</html>

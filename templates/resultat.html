@@ -1,67 +1,169 @@
-<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8">
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Votre CV</title>
+<title>Mon CV</title>
 
-<link rel="stylesheet" href="/static/style.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
-</head><body><div class="container">
+body{
+    margin:0;
+    padding:20px;
+    font-family:Arial,sans-serif;
+    background:#f5f5f5;
+}
 
-    <h1>
-        {{ prenom }} {{ nom }}
-    </h1>
+.cv{
 
-    <p>
-        <b>📧 Email :</b>
-        {{ email }}
-    </p>
+    max-width:900px;
+    margin:auto;
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
 
-    <p>
-        <b>📞 Téléphone :</b>
-        {{ telephone }}
-    </p>
+}
 
-    <p>
-        <b>🏠 Adresse :</b>
-        {{ adresse }}
-    </p>
+.header{
 
-    <hr>
+    text-align:center;
+    padding:40px;
+    color:white;
 
-    <h2>👤 Profil</h2>
-    <p>{{ profil }}</p>
+}
 
-    <h2>💪 Compétences</h2>
-    <p>{{ competences }}</p>
+.bleu{
+    background:#2563eb;
+}
 
-    <h2>💼 Expérience</h2>
-    <p>{{ experience }}</p>
+.vert{
+    background:#16a34a;
+}
 
-    <h2>🎓 Formation</h2>
-    <p>{{ formation }}</p>
+.sombre{
+    background:#1f2937;
+}
 
-    <h2>🌍 Langues</h2>
-    <p>{{ langues }}</p>
+.photo{
 
-    <h2>⭐ Centres d'intérêt</h2>
-    <p>{{ interets }}</p>
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid white;
+    margin-bottom:15px;
 
-    <br>
+}
 
-    <a href="/pdf">
-        <button>
-            📄 Télécharger le PDF
-        </button>
-    </a>
+.content{
+    padding:30px;
+}
 
-    <br><br>
+.section{
+    margin-bottom:25px;
+}
 
-    <a href="/">
-        <button>
-            🔙 Retour
-        </button>
-    </a>
+.section h2{
+    margin-bottom:10px;
+    color:#2563eb;
+}
+
+.download{
+
+    display:block;
+    text-align:center;
+    margin-top:25px;
+
+}
+
+.download a{
+
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    padding:15px 25px;
+    border-radius:10px;
+    font-size:18px;
+
+}
+
+.download a:hover{
+    opacity:0.9;
+}
+
+.info{
+    margin:5px 0;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="cv">
+
+    <div class="header {{ theme }}">
+
+        {% if photo %}
+        <img
+            src="{{ url_for('static', filename='uploads/' + photo) }}"
+            class="photo"
+        >
+        {% endif %}
+
+        <h1>{{ prenom }} {{ nom }}</h1>
+
+        <p>{{ email }}</p>
+        <p>{{ telephone }}</p>
+        <p>{{ adresse }}</p>
+
+    </div>
+
+    <div class="content">
+
+        <div class="section">
+            <h2>👤 Profil</h2>
+            <p>{{ profil }}</p>
+        </div>
+
+        <div class="section">
+            <h2>💻 Compétences</h2>
+            <p>{{ competences }}</p>
+        </div>
+
+        <div class="section">
+            <h2>🏢 Expérience</h2>
+            <p>{{ experience }}</p>
+        </div>
+
+        <div class="section">
+            <h2>🎓 Formation</h2>
+            <p>{{ formation }}</p>
+        </div>
+
+        <div class="section">
+            <h2>🌍 Langues</h2>
+            <p>{{ langues }}</p>
+        </div>
+
+        <div class="section">
+            <h2>🎯 Centres d'intérêt</h2>
+            <p>{{ interets }}</p>
+        </div>
+
+        <div class="download">
+
+            <a href="/pdf">
+                ⬇️ Télécharger le PDF
+            </a>
+
+        </div>
+
+    </div>
 
 </div>
 
-</body></html>''
+</body>
+</html>
