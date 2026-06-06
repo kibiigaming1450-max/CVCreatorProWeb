@@ -166,9 +166,12 @@ button:hover{
     }
 
     .photo{
-        width:120px;
-        height:120px;
-    }
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid white;
+}
 
     h1{
         font-size:26px;
