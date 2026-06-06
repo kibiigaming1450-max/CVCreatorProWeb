@@ -3,6 +3,7 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
 from reportlab.lib.styles import getSampleStyleSheet
 from werkzeug.utils import secure_filename
 import os
+from reportlab.platypus import Image
 
 app = Flask(__name__)
 
@@ -81,7 +82,26 @@ def pdf():
     formation = cv_data.get("formation", "")
     langues = cv_data.get("langues", "")
     interets = cv_data.get("interets", "")
+    if cv_data.get("photo"):
 
+        image_path = os.path.join(
+        UPLOAD_FOLDER,
+        cv_data["photo"]
+    )
+
+    if os.path.exists(image_path):
+
+        photo = Image(
+            image_path,
+            width=80,
+            height=80
+        )
+
+        elements.append(photo)
+
+        elements.append(
+            Spacer(1, 10)
+        )
     titre = f"{prenom} {nom}"
 
     elements.append(
